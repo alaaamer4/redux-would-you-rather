@@ -1,0 +1,24 @@
+.navcontainer {
+  width: 100vw;
+  background: #3178c6;
+  color: #e9f4fc;
+  padding: 0.06rem;
+}
+.navbar {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 60px;
+}
+.logo img {
+  width: 100%;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

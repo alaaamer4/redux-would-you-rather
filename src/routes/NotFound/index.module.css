@@ -1,0 +1,22 @@
+.not_found {
+  width: 100vw;
+  height: 82vh;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../../assets/not-found.svg");
+}
+.close {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 80px;
+  height: 73px;
+  background-image: url("../../assets/left-arrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  font-size: 0;
+  border: none;
+  outline: none;
+}

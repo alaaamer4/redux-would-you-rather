@@ -1,0 +1,26 @@
+.wrapper {
+  min-height: 85vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background: url("../../assets/home.svg") right center no-repeat;
+}
+.questions_list {
+  width: 55vw;
+  margin: 1rem 0;
+  background-color: #0080ff2d;
+}
+
+@media only screen and (max-width: 1200px) {
+  .questions_list {
+    width: 70vw;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .questions_list {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,41 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.658);
+}
+.select {
+  margin: 50px;
+  width: 300px;
+  padding: 0.4rem 2rem 0.4rem 1.2rem;
+  font-size: 16px;
+  border: 1px solid rgb(245, 245, 245);
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../../assets/arrowDown.png") 100% / 10% no-repeat #f3f4f5;
+}
+
+.select:hover {
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+
+  padding: 0.6rem 3.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  background: #3178c6;
+  color: #fff;
+  border: none;
+  transition: all 400ms ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #265d97;
+}
