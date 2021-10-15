@@ -1,4 +1,5 @@
 .question_page {
+  position: relative;
   width: 100vw;
   margin: auto;
   background: url("../../assets/new-question.svg") right top no-repeat;
@@ -54,7 +55,21 @@
   cursor: pointer;
   background: #3178c6;
 }
-
+.close {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../../assets/left-arrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  font-size: 0;
+  border: none;
+  outline: none;
+}
 @media only screen and (max-width: 1200px) {
   .question_page {
     background: #fff;

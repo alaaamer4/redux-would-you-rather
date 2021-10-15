@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const LeaderBoard = () => {
   const users = useSelector((state) => state.users.users);
   const questions = useSelector((state) => state.questions.questions);
@@ -17,6 +18,9 @@ const LeaderBoard = () => {
     users &&
     questions && (
       <div className={styles.wrapper}>
+        <Link className={styles.close} to="/">
+          Close
+        </Link>
         {sortedUsers.map((user, i) => (
           <div className={styles.flex} key={user.id}>
             <div

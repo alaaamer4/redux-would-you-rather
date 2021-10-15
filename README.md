@@ -20,3 +20,7 @@ to install all needed dependencies
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Author
+
+this project was created by `Mohamed Amer`

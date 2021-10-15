@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { answerQuestion } from "../../actions/questions";
 import styles from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router";
-const UnAnsweredQuestion = () => {
+import { Redirect, useParams, Link } from "react-router-dom";
+const QuestionDetails = () => {
   const [selected, setSelected] = useState("");
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -18,19 +18,25 @@ const UnAnsweredQuestion = () => {
   };
   const handelSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      answerQuestion({
-        authedUser: authedUser.id,
-        qid: question.id,
-        answer: selected,
-      })
-    );
+    selected !== "" &&
+      dispatch(
+        answerQuestion({
+          authedUser: authedUser.id,
+          qid: question.id,
+          answer: selected,
+        })
+      );
   };
-  return question &&
+  return !question ? (
+    <Redirect to="/notfound" />
+  ) : question &&
     author &&
     !question.optionOne.votes.includes(authedUser.id) &&
     !question.optionTwo.votes.includes(authedUser.id) ? (
     <div className={styles.question}>
+      <Link className={styles.close} to="/">
+        Close
+      </Link>
       <div className={styles.question_header}>
         <h3>{author.name} asks ... </h3>
       </div>
@@ -61,10 +67,9 @@ const UnAnsweredQuestion = () => {
     </div>
   ) : (
     <div className={styles.question}>
-      {console.log(
-        question.optionOne.votes.length,
-        question.optionTwo.votes.length
-      )}
+      <Link className={styles.close} to="/">
+        Close
+      </Link>
       <div style={{ textAlign: "center" }} className={styles.question_header}>
         <h2>Results</h2>
       </div>
@@ -145,4 +150,4 @@ const UnAnsweredQuestion = () => {
   );
 };
 
-export default UnAnsweredQuestion;
+export default QuestionDetails;

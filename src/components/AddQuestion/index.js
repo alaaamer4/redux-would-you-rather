@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addQuestion } from "../../actions/questions";
+import { Link } from "react-router-dom";
 const AddQuestion = () => {
   const history = useHistory();
   const authUser = useSelector((state) => state.login.authUser.id);
@@ -25,6 +26,9 @@ const AddQuestion = () => {
   };
   return (
     <div className={styles.question_page}>
+      <Link className={styles.close} to="/">
+        Close
+      </Link>
       <div className={styles.new_question}>
         <h1>Create New Question</h1>
         <form className={styles.question_form} onSubmit={handelSubmit}>

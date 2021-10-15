@@ -9,10 +9,12 @@ import AddQuestion from "./AddQuestion";
 import NotFound from "../routes/NotFound";
 import ProtectedRoute from "../helpers/ProtectedRoute";
 import LeaderBoard from "../routes/LeaderBoard";
+import { getQuestions } from "../actions/questions";
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());
+    dispatch(getQuestions());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -25,7 +27,7 @@ const App = () => {
             <ProtectedRoute exact path="/leaderboard" component={LeaderBoard} />
             <ProtectedRoute
               exact
-              path="/question/:id"
+              path="/questions/:id"
               component={QuestionDetails}
             />
             <Route component={NotFound} />

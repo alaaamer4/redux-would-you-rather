@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-const UnAnsweredQuestion = ({ user, optionOne, optionTwo, id }) => {
+import moment from "moment";
+const UnAnsweredQuestion = ({ user, optionOne, optionTwo, id, time }) => {
   const users = useSelector((state) => state.users.users);
 
   const author = users && users.find((u) => u.id === user);
@@ -22,9 +23,12 @@ const UnAnsweredQuestion = ({ user, optionOne, optionTwo, id }) => {
             or
             <p>{optionTwo.text}</p>
           </div>
-          <Link to={`/question/${id}`} className={styles.btn}>
+          <Link to={`/questions/${id}`} className={styles.btn}>
             View poll
           </Link>
+        </div>
+        <div className={styles.date}>
+          Created At {moment(time).format("Do MMM YYYY ha")}
         </div>
       </div>
     </div>
